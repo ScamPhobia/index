@@ -11,7 +11,7 @@ export default function Navbar() {
         </Link>
         <nav className="flex flex-1 items-center space-x-6 text-sm font-medium">
           <Link href="/about" className="transition-colors hover:text-primary">
-            ?
+            About
           </Link>
         </nav>
         <div className="flex items-center space-x-4">
