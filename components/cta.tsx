@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { Link } from "lucide-react"
+import Link from "next/link"
 
 export default function CTA() {
   return (
@@ -10,7 +10,7 @@ export default function CTA() {
         </h2>
         <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
           Before engaging to a crypto project, make sure to look into 
-          {" "}<a className="underline" href="/audits">Audit Reports</a> {" "}
+          {" "}<Link className="underline" href="/audits">Audit Reports</Link> {" "}
           and check the project score.
 
           <br />
