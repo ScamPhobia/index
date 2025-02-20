@@ -1,6 +1,3 @@
-import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
-
 export default function Hero() {
   return (
     <section className="container flex min-h-[calc(100vh-3.5rem)] max-w-screen-2xl flex-col items-center justify-center space-y-8 py-24 text-center md:py-32">

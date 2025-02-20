@@ -1,6 +1,20 @@
+"use client"
 import Link from "next/link"
+import { useTheme } from "next-themes"
+import { Sun, Moon } from "lucide-react"
+import { useEffect, useState } from "react"
 
 export default function Navbar() {
+  const { theme, setTheme } = useTheme()
+  const [hasMounted, setHasMounted] = useState(false)
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light")
+  }
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 max-w-screen-2xl items-center">
@@ -15,12 +29,13 @@ export default function Navbar() {
           </Link>
         </nav>
         <div className="flex items-center space-x-4">
-          {/* <Link href="https://github.com/amanesoft" target="_blank" rel="noreferrer">
-            <Button variant="ghost" size="icon">
-              <Github className="h-4 w-4" />
-              <span className="sr-only">GitHub</span>
-            </Button>
-          </Link> */}
+          <button onClick={toggleTheme} className="flex items-center justify-center p-2">
+            {hasMounted && theme === "light" ? (
+              <Moon className="h-5 w-5 text-primary" />
+            ) : (
+              <Sun className="h-5 w-5 text-primary" />
+            )}
+          </button>
           <Link href={"/audits"}>
             Reports
           </Link>

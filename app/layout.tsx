@@ -5,6 +5,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import MouseMoveEffect from "@/components/mouse-move-effect"
 import Footer from "@/components/footer"
+import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -18,15 +19,22 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="system" suppressHydrationWarning>
       <body className={`${inter.className} bg-background text-foreground antialiased`}>
-      <Navbar />
-        <MouseMoveEffect />
-        {children}
-      <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+        >
+          <Navbar />
+          <MouseMoveEffect />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
-    </html>
+    </html >
   )
 }
 
