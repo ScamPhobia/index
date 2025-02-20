@@ -1,6 +1,7 @@
 import Hero from "@/components/hero"
 import Features from "@/components/features"
 import CTA from "@/components/cta"
+import NewsBar from "@/components/news-bar"
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       </div>
 
       <div className="relative z-10">
+        <NewsBar />
         <Hero />
         <Features />
         <CTA />
