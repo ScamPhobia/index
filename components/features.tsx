@@ -33,13 +33,15 @@ export default function Features() {
   return (
     <section className="container space-y-16 py-24 md:py-32">
       <div className="mx-auto max-w-[58rem] text-center">
-        <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-5xl">What we do</h2>
+        <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-5xl">We help you to Verify</h2>
         <p className="mt-4 text-muted-foreground sm:text-lg">
-          TL;DR: ScamPhobia is your DYOR.
+          When <b>D</b>oing <b>Y</b>our <b>O</b>wn <b>R</b>esearch:
           <br />
-          We have a very high standard when it comes to Security.
+          Consider looking into our Knowledge Base
           <br />
-          We evaluate crypto projects and assign an score based on our Standard Checklist.
+          We simplify industry leaders audits reports and remove Technical Jargons.
+          <br />
+          Projects are either <span className="text-green-500">Safe</span>, <span className="text-yellow-500">Low Risk</span>, <span className="text-yellow-700">Risky</span>, <span className="text-red-500">Dangerous</span>
         </p>
       </div>
       <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">
