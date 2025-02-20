@@ -10,6 +10,12 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const audit = getAuditBySlug(params.slug)
+
+  // Error checking: Ensure the audit exists
+  if (!audit) {
+    throw new Error(`Audit not found for slug: ${params.slug}`);
+  }
+
   return {
     title: audit.meta.title,
     description: audit.meta.description,
@@ -18,12 +24,18 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 export default function AuditPage({ params }: { params: { slug: string } }) {
   const audit = getAuditBySlug(params.slug)
+
+  if (!audit) {
+    return <div>Audit not found.</div>;
+  }
+
   const contentHtml = marked(audit.content)
 
   return (
     <div className="container mx-auto px-4 py-12">
       <h1 className="text-4xl font-bold mb-8">{audit.meta.title}</h1>
-      <div className="prose lg:prose-xl" dangerouslySetInnerHTML={{ __html: contentHtml }} />
+      <div className="prose lg:prose-xl"
+        dangerouslySetInnerHTML={{ __html: contentHtml }} />
     </div>
   )
 }
