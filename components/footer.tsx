@@ -18,7 +18,7 @@ export default function Footer() {
           <p className="text-sm text-muted-foreground">
 
             <Link
-              href="https://substack.com/@scamphobia/posts"
+              href="https://substack.com/@scamphobia/"
               target="_blank"
               className="text-muted-foreground transition-colors hover:text-primary"
               rel="noopener noreferrer"
